@@ -1,0 +1,48 @@
+:root {
+  --accent: #1976d2;
+  --bg: #f5f7fa;
+  --card: #fff;
+  --muted: #666;
+}
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  color: #111;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}

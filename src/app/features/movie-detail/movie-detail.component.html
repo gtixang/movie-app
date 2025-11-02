@@ -1,0 +1,37 @@
+<section class="detail">
+  <ng-container
+    *ngrxLet="{
+      movie: movie$,
+      status: status$,
+    } as vm"
+  >
+    @switch (vm.status) {
+      @case ('loading') {
+        <app-loading-spinner aria-label="Загрузка фильма" />
+      }
+      @case ('loaded') {
+        <div class="poster">
+          <img
+            [src]="vm.movie?.poster || 'assets/1.png'"
+            [alt]="vm.movie?.title"
+            style="width: 100%; border-radius: 8px"
+          />
+        </div>
+
+        <div>
+          <h2>
+            {{ vm.movie?.title }}
+            <small>({{ vm.movie?.year }})</small>
+          </h2>
+          <p><strong>Рейтинг:</strong> {{ vm.movie?.rating }}</p>
+          <p>{{ vm.movie?.description }}</p>
+          <p><strong>Жанры:</strong> {{ vm.movie?.genres?.join(', ') }}</p>
+          <button (click)="back()">Назад</button>
+        </div>
+      }
+      @case ('error') {
+        <p class="error-message" role="alert">Произошла ошибка при загрузке данных.</p>
+      }
+    }
+  </ng-container>
+</section>

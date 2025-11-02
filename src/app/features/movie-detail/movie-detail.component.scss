@@ -1,0 +1,17 @@
+.poster img {
+  max-width: 100%;
+  height: auto;
+}
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (min-width: 900px) {
+  .detail {
+    flex-direction: row;
+  }
+  .detail .poster {
+    flex: 0 0 320px;
+  }
+}

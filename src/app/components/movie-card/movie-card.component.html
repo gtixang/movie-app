@@ -1,0 +1,14 @@
+<article class="movie-card" [routerLink]="['/movie', movie.id]" tabindex="0" role="link">
+  <img
+    class="movie-card__poster"
+    [src]="movie.poster || 'assets/1.png'"
+    [alt]="movie.title"
+  />
+  <div class="movie-card__footer">
+    <p>
+      <span class="movie-card__year">{{ movie.year }}</span>
+      <strong class="movie-card__title">{{ movie.title }}</strong>
+    </p>
+    <span class="movie-card__rating">⭐{{ movie.rating }}</span>
+  </div>
+</article>

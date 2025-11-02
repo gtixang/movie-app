@@ -1,0 +1,10 @@
+<form (submit)="onSubmit($event)" class="search-form">
+  <input
+    [value]="model()()"
+    type="search"
+    aria-label="Поиск фильмов"
+    (input)="onInput($event)"
+    class="search-form__input"
+    placeholder="Поиск фильма по названию..."
+  />
+</form>
