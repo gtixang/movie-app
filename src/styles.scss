@@ -1,8 +1,6 @@
 :root {
-  --accent: #1976d2;
   --bg: #f5f7fa;
-  --card: #fff;
-  --muted: #666;
+  --white: #ffffff;
 }
 * {
   box-sizing: border-box;
@@ -22,8 +20,13 @@ body {
 
 .container {
   max-width: 1100px;
-  margin: 1rem auto;
-  padding: 0 1rem;
+  margin: 15px auto;
+  padding: 0 15px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -45,4 +48,13 @@ ul {
 }
 li {
   list-style-type: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }

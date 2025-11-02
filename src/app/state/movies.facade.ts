@@ -8,7 +8,7 @@ import { moviesActions } from './movies.actions';
 @Injectable({ providedIn: 'root' })
 export class MoviesFacade {
   private readonly store = inject(Store);
-  public readonly movies$ = this.store.select(movieSelectors.selectAll);
+  public readonly movies$ = this.store.select(movieSelectors.filteredMoviesSelector);
   public readonly movie$ = this.store.select(movieSelectors.selectOne);
   public readonly status$ = this.store.select(movieSelectors.selectStatus);
 
@@ -17,5 +17,8 @@ export class MoviesFacade {
   }
   getOne() {
     this.store.dispatch(moviesActions.getOne());
+  }
+  setFilter(term: string) {
+    this.store.dispatch(moviesActions.setFilter({ filter: { term } }));
   }
 }

@@ -1,4 +1,4 @@
-import { createFeatureSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 import { moviesFeature, MoviesState } from './movies.reducer';
 
@@ -6,6 +6,20 @@ export const selectArticleState = createFeatureSelector<MoviesState>(moviesFeatu
 
 export const {
   selectStatus,
-  selectMovies: selectAll,
+  selectMovies: selectAllMovies,
   selectMovie: selectOne,
+  selectSearchTerm: searchTermSelector,
 } = moviesFeature;
+
+export const filteredMoviesSelector = createSelector(
+  selectAllMovies,
+  searchTermSelector,
+  (movies, searchTerm) => {
+    if (!searchTerm?.term) {
+      return movies;
+    }
+    return movies.filter((movie) =>
+      movie.title.toLowerCase().includes(searchTerm.term.toLowerCase()),
+    );
+  },
+);

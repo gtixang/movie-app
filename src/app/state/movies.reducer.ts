@@ -8,12 +8,14 @@ export interface MoviesState {
   status: LoadingStatus;
   movies: Movie[];
   movie: Movie | null;
+  searchTerm: { term: string };
 }
 
 export const moviesInitialState: MoviesState = {
   status: 'init',
   movies: [],
   movie: null,
+  searchTerm: { term: '' },
 };
 
 export const moviesFeature = createFeature({
@@ -55,6 +57,11 @@ export const moviesFeature = createFeature({
     on(moviesActions.getOneFailed, (state) => ({
       ...state,
       status: 'error' as const,
+    })),
+
+    on(moviesActions.setFilter, (state, { filter }) => ({
+      ...state,
+      searchTerm: filter,
     })),
   ),
 });

@@ -1,6 +1,7 @@
-<section role="search">
-  <app-search-form [model]="searchQuery" />
+<section>
+  <app-search-form [model]="searchTerm" />
 </section>
+
 <section class="movies-section">
   <ng-container
     *ngrxLet="{
@@ -10,10 +11,10 @@
   >
     @switch (vm.status) {
       @case ('loading') {
-        <app-loading-spinner aria-label="Загрузка фильмов" />
+        <mat-spinner></mat-spinner>
       }
       @case ('loaded') {
-        <ul class="movie-grid" role="list">
+        <ul class="movies-section__grid movie-grid" role="list">
           @for (m of vm.movies; track m.id) {
             <li>
               <app-movie-card [movie]="m"></app-movie-card>
@@ -22,10 +23,12 @@
         </ul>
       }
       @case ('error') {
-        <p class="error-message" role="alert">Произошла ошибка при загрузке данных.</p>
+        <p class="movies-section__error-message" role="alert">
+          Произошла ошибка при загрузке данных.
+        </p>
       }
       @default {
-        <p class="empty-message">Ничего не найдено.</p>
+        <p class="movies-section__empty-message">Ничего не найдено.</p>
       }
     }
   </ng-container>

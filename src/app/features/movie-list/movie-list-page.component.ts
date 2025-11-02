@@ -1,25 +1,28 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  effect,
   inject,
   OnInit,
   signal,
 } from '@angular/core';
-
+import { toObservable, takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { LetDirective } from '@ngrx/component';
+import { debounceTime, distinctUntilChanged } from 'rxjs';
 
 import { MoviesFacade } from '@state/movies.facade';
 import { MovieCardComponent } from '@components/movie-card';
-import { LoadingSpinnerComponent } from '@components/loading-spinner';
 import { SearchFormComponent } from '@app/components/search-form';
+
+import { CommonModule } from '@angular/common';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-movie-list',
   imports: [
     MovieCardComponent,
+    CommonModule,
     LetDirective,
-    LoadingSpinnerComponent,
+    MatProgressSpinnerModule,
     SearchFormComponent,
   ],
   templateUrl: './movie-list-page.component.html',
@@ -27,35 +30,23 @@ import { SearchFormComponent } from '@app/components/search-form';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieListPageComponent implements OnInit {
-  public moviesFacade = inject(MoviesFacade);
+  public readonly moviesFacade = inject(MoviesFacade);
   public readonly status$ = this.moviesFacade.status$;
   public readonly movies$ = this.moviesFacade.movies$;
 
-  public searchQuery = signal('');
+  public readonly searchTerm = signal('');
 
-  constructor() {
-    effect(() => {
-      const query = this.searchQuery().trim();
-      if (query) {
-        console.log('🔍 Поиск фильмов по запросу:', query);
-        // тут можно вызывать сервис:
-        // this.moviesService.loadMovies(query);
-      }
-    });
-  }
+  private readonly searchStream$ = toObservable(this.searchTerm).pipe(
+    debounceTime(300),
+    distinctUntilChanged(),
+    takeUntilDestroyed(),
+  );
 
   ngOnInit() {
-    this.moviesFacade.getAll();
+    this.searchStream$.subscribe((term: string) => {
+      this.moviesFacade.setFilter(term);
+    });
 
-    // effect(() => {
-    //   console.log('🔍 Поиск изменился:', this.searchQuery());
-    // });
-    // this.movies$ = this.search.valueChanges.pipe(
-    //   tap((value) => console.log(value)),
-    //   startWith(''),
-    //   debounceTime(300),
-    //   distinctUntilChanged(),
-    //   switchMap((term) => this.movieService.search(term as any))
-    // );
+    this.moviesFacade.getAll();
   }
 }

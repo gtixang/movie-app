@@ -2,11 +2,10 @@ import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/cor
 import { Router } from '@angular/router';
 import { MoviesFacade } from '@app/state/movies.facade';
 import { LetDirective } from '@ngrx/component';
-import { LoadingSpinnerComponent } from '@app/components/loading-spinner';
 
 @Component({
   selector: 'app-movie-detail',
-  imports: [LetDirective, LoadingSpinnerComponent],
+  imports: [LetDirective],
   templateUrl: './movie-detail.component.html',
   styleUrls: ['./movie-detail.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,7 +19,7 @@ export class MovieDetailPageComponent implements OnInit {
   ngOnInit(): void {
     this.movieFacade.getOne();
   }
-  back() {
+  goBack() {
     this.router.navigate(['/']);
   }
 }

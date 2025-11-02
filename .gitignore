@@ -2,6 +2,7 @@
 /dist
 /tmp
 /out-tsc
+.angular/
 
 # dependencies
 /node_modules
@@ -10,7 +11,7 @@
 /.idea
 .project
 .classpath
-./c9
+.c9/
 *.launch
 .settings/
 

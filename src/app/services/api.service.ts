@@ -14,15 +14,6 @@ export class ApiService {
     });
   }
 
-  // search(term: string): Observable<Movie[]> {
-  //   if (!term.trim()) return this.getMovies();
-  //   return this.http.get<Movie[]>(`${this.api}?q=${encodeURIComponent(term)}`).pipe(
-  //     catchError((err) => {
-  //       console.error(err);
-  //       return of([]);
-  //     })
-  //   );
-  // }
   private get headers(): HttpHeaders {
     const headersConfig = {
       'Content-Type': 'application/json',
