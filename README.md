@@ -1,4 +1,4 @@
-# <img src="logo.svg" alt="Movie App Logo"> angular-movie-app — Тестовое задание на Angular
+# <img src="logo.svg" alt="Movie App Logo" width="64" height="64"> angular-movie-app — Тестовое задание на Angular
 
 
 В этом архиве находится полностью готовое приложение **angular-movie-app** (на **Angular 18**) с каталогом `src/`, полной конфигурацией и файлом `db.json` для запуска mock API через `json-server`.
