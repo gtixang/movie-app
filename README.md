@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="movie.svg" alt="Movie App Logo" width="28" style="vertical-align: middle; margin-right: 8px;" />
+  <img src="movie.svg" alt="Movie App Logo" width="28" style="vertical-align: middle; align="center"" />
   angular-movie-app — Тестовое задание на Angular
 </h1>
 
