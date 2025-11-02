@@ -1,4 +1,4 @@
-<h1>
+<h1 align="center">
   <img src="movie.svg" alt="Movie App Logo" width="30" style="vertical-align: middle;" />
   angular-movie-app — Тестовое задание на Angular
 </h1>
