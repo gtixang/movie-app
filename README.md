@@ -1,4 +1,5 @@
 ![Movie App Logo](https://github.com/gtixang/repository/raw/main/assets/movie.svg)
+![Movie App Logo](./assets/logo.svg)
 <h1 align="center">
   <img src="logo.svg" alt="Movie App Logo" width="38px" height="38px" style="vertical-align: middle; align="center"" />
   angular-movie-app — Тестовое задание на Angular
