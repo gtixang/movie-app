@@ -30,7 +30,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieListPageComponent implements OnInit {
-  public readonly moviesFacade = inject(MoviesFacade);
+  private readonly moviesFacade = inject(MoviesFacade);
   public readonly status$ = this.moviesFacade.status$;
   public readonly movies$ = this.moviesFacade.movies$;
 
@@ -43,10 +43,16 @@ export class MovieListPageComponent implements OnInit {
   );
 
   ngOnInit() {
+    this.initializeSearchSubscription();
+    this.initializeMovieList();
+  }
+  private initializeMovieList(): void {
+    this.moviesFacade.getAll();
+  }
+
+  private initializeSearchSubscription(): void {
     this.searchStream$.subscribe((term: string) => {
       this.moviesFacade.setFilter(term);
     });
-
-    this.moviesFacade.getAll();
   }
 }

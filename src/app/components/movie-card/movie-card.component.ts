@@ -9,5 +9,5 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieCardComponent {
-  @Input() movie!: Movie;
+  @Input({ required: true }) movie!: Movie;
 }

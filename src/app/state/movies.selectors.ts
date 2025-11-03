@@ -5,14 +5,14 @@ import { moviesFeature, MoviesState } from './movies.reducer';
 export const selectArticleState = createFeatureSelector<MoviesState>(moviesFeature.name);
 
 export const {
-  selectStatus,
-  selectMovies: selectAllMovies,
-  selectMovie: selectOne,
+  selectStatus: statusSelector,
+  selectMovies: allMoviesSelector,
+  selectMovie: movieSelector,
   selectSearchTerm: searchTermSelector,
 } = moviesFeature;
 
 export const filteredMoviesSelector = createSelector(
-  selectAllMovies,
+  allMoviesSelector,
   searchTermSelector,
   (movies, searchTerm) => {
     if (!searchTerm?.term) {

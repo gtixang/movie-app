@@ -9,10 +9,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchFormComponent {
-  public model = input.required<WritableSignal<string>>();
+  public searchTermSignal = input.required<WritableSignal<string>>();
 
   onInput(event: Event) {
-    this.model().set((event.target as HTMLInputElement).value);
+    this.searchTermSignal().set((event.target as HTMLInputElement).value);
   }
 
   onSubmit(event: Event) {

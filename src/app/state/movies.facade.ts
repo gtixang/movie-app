@@ -9,8 +9,8 @@ import { moviesActions } from './movies.actions';
 export class MoviesFacade {
   private readonly store = inject(Store);
   public readonly movies$ = this.store.select(movieSelectors.filteredMoviesSelector);
-  public readonly movie$ = this.store.select(movieSelectors.selectOne);
-  public readonly status$ = this.store.select(movieSelectors.selectStatus);
+  public readonly movie$ = this.store.select(movieSelectors.movieSelector);
+  public readonly status$ = this.store.select(movieSelectors.statusSelector);
 
   getAll() {
     this.store.dispatch(moviesActions.getAll());

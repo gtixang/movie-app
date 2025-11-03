@@ -1,6 +1,6 @@
 <form (submit)="onSubmit($event)" class="search-form">
   <input
-    [value]="model()()"
+    [value]="searchTermSignal()()"
     type="search"
     aria-label="Поиск фильмов"
     (input)="onInput($event)"

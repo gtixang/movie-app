@@ -11,7 +11,10 @@
       }
       @case ('loaded') {
         <div class="movie-detail__poster">
-          <img [src]="vm.movie?.poster || 'assets/1.png'" [alt]="vm.movie?.title" />
+          <img
+            [src]="vm.movie?.poster || 'assets/default-image.png'"
+            [alt]="vm.movie?.title"
+          />
         </div>
 
         <div class="movie-detail__info">
