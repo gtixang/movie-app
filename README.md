@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="movie.svg" alt="Movie App Logo" width="38px" height="38px" style="vertical-align: middle; align="center"" />
+  <img src="src/assets/movie.svg" alt="Movie App Logo" width="38px" height="38px" style="vertical-align: middle; align="center"" />
   angular-movie-app — Тестовое задание на Angular
 </h1>
 
@@ -46,7 +46,7 @@ npm run start:all
 - **json-server** (mock API)
 - **concurrently** (параллельный запуск клиента и сервера)
 - **angular-cli-ghpages** (деплой на GitHub Pages)
-
+- **BEM** (методология именования классов в CSS)
 ---
 
 ## ⚙️ Особенности реализации
