@@ -46,7 +46,7 @@ npm run start:all
 - **json-server** (mock API)
 - **concurrently** (параллельный запуск клиента и сервера)
 - **angular-cli-ghpages** (деплой на GitHub Pages)
-
+- **BEM** (Блок, Элемент, Модификатор)
 ---
 
 ## ⚙️ Особенности реализации
