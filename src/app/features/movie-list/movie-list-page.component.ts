@@ -14,17 +14,10 @@ import { MovieCardComponent } from '@components/movie-card';
 import { SearchFormComponent } from '@app/components/search-form';
 
 import { CommonModule } from '@angular/common';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-movie-list',
-  imports: [
-    MovieCardComponent,
-    CommonModule,
-    LetDirective,
-    MatProgressSpinnerModule,
-    SearchFormComponent,
-  ],
+  imports: [MovieCardComponent, CommonModule, LetDirective, SearchFormComponent],
   templateUrl: './movie-list-page.component.html',
   styleUrls: ['./movie-list-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
