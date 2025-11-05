@@ -1,38 +1,37 @@
 .movie-card {
   height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  background: var(--card);
   overflow: hidden;
-  cursor: pointer;
+  background: var(--card);
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
+  cursor: pointer;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
+  flex-direction: column;
+  justify-content: space-between;
 
   &:hover {
+    box-shadow: 0 8px 18px rgb(0 0 0 / 25%);
     transform: translateY(-4px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
   }
 
   &__poster {
-    display: block;
     width: 100%;
+    display: block;
+    background-color: #2b2b2b;
     aspect-ratio: 3 / 4;
     object-fit: cover;
     object-position: top center;
-    background-color: #2b2b2b;
   }
 
   &__footer {
     padding: 0 10px;
     display: flex;
+    font-size: 14px;
     justify-content: space-between;
     align-items: center;
-    font-size: 14px;
   }
 
   &__meta {
@@ -42,23 +41,23 @@
 
   &__title {
     margin: 0;
-    font-size: 15px;
     display: -webkit-box;
+    overflow: hidden;
+    font-size: 15px;
     -webkit-line-clamp: 3; /* максимум три строки */
     -webkit-box-orient: vertical;
-    overflow: hidden;
     text-overflow: ellipsis;
   }
 
   &__year {
-    opacity: 0.8;
     color: #ccc;
+    opacity: 0.8;
   }
 
   &__rating {
     display: flex;
-    align-items: center;
-    color: #f5c518;
     font-weight: 500;
+    color: #f5c518;
+    align-items: center;
   }
 }

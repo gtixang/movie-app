@@ -1,7 +1,8 @@
 :root {
   --bg: #f5f7fa;
-  --white: #ffffff;
+  --white: #fff;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -13,9 +14,9 @@ body {
 
 body {
   margin: 0;
-  background: var(--bg);
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   color: #111;
+  background: var(--bg);
 }
 
 .container {
@@ -46,6 +47,7 @@ ul {
   margin: 0;
   padding: 0;
 }
+
 li {
   list-style-type: none;
 }

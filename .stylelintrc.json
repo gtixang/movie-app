@@ -1,0 +1,101 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "no-empty-source": null,
+    "block-no-empty": true,
+    "color-no-invalid-hex": true,
+
+    "selector-max-id": 0,
+    "selector-no-qualifying-type": null,
+    "selector-class-pattern": "^[a-z0-9]+(?:[\\-_][a-z0-9]+)*$",
+
+    "order/order": [
+      "custom-properties",
+      "dollar-variables",
+      "declarations",
+      {
+        "type": "at-rule",
+        "name": "include"
+      },
+      "rules"
+    ],
+
+    "order/properties-order": [
+      {
+        "groupName": "layout",
+        "emptyLineBefore": "always",
+        "properties": [
+          "width",
+          "min-width",
+          "max-width",
+          "height",
+          "min-height",
+          "max-height",
+
+          "margin",
+          "margin-top",
+          "margin-right",
+          "margin-bottom",
+          "margin-left",
+
+          "padding",
+          "padding-top",
+          "padding-right",
+          "padding-bottom",
+          "padding-left",
+
+          "display",
+          "visibility",
+          "position",
+          "top",
+          "right",
+          "bottom",
+          "left",
+          "z-index",
+
+          "overflow",
+          "overflow-x",
+          "overflow-y"
+        ]
+      },
+      {
+        "groupName": "typography",
+        "emptyLineBefore": "always",
+        "properties": [
+          "font",
+          "font-family",
+          "font-size",
+          "font-weight",
+          "line-height",
+          "color",
+          "text-align",
+          "text-transform",
+          "text-decoration"
+        ]
+      },
+      {
+        "groupName": "visual",
+        "emptyLineBefore": "always",
+        "properties": [
+          "background",
+          "background-color",
+          "background-image",
+          "background-size",
+          "background-repeat",
+
+          "border",
+          "border-radius",
+
+          "box-shadow",
+          "opacity"
+        ]
+      },
+      {
+        "groupName": "other",
+        "emptyLineBefore": "always",
+        "properties": ["cursor", "transition", "transform"]
+      }
+    ]
+  }
+}

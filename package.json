@@ -13,9 +13,12 @@
     "deploy": "npx angular-cli-ghpages --dir=dist/angular-movie-app",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "lint:styles": "stylelint \"src/**/*.scss\"",
+    "lint:css": "stylelint \"**/*.scss\" --fix"
   },
   "dependencies": {
+    "-": "^0.0.1",
     "@angular/animations": "^20.2.0",
     "@angular/cdk": "^20.2.11",
     "@angular/common": "^20.2.0",
@@ -55,6 +58,10 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "prettier": "^3.6.2",
+    "stylelint": "^16.25.0",
+    "stylelint-config-standard-scss": "^16.0.0",
+    "stylelint-order": "^7.0.0",
+    "stylelint-scss": "^6.12.1",
     "typescript": "~5.9.2",
     "typescript-eslint": "8.46.1"
   }

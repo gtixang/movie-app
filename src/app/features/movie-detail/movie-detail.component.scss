@@ -1,9 +1,9 @@
 .movie-detail {
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
-  padding-bottom: 20px;
 
-  @media (min-width: 600px) {
+  @media (width >= 600px) {
     flex-direction: row;
     padding-bottom: 0;
   }
@@ -21,7 +21,7 @@
   &__info {
     margin-left: 0;
 
-    @media (min-width: 600px) {
+    @media (width >= 600px) {
       margin-left: 20px;
     }
   }
@@ -44,29 +44,30 @@
   }
 
   &__back-button {
-    background-color: transparent;
-    border: 2px solid #3498db;
-    color: #3498db;
     padding: 10px 20px;
+    display: inline-flex;
     font-size: 16px;
     font-weight: 600;
+    color: #3498db;
+    background-color: transparent;
+    border: 2px solid #3498db;
     border-radius: 8px;
-    display: inline-flex;
-    align-items: center;
     cursor: pointer;
     transition:
       background-color 0.3s,
       color 0.3s,
       transform 0.3s;
+    align-items: center;
 
     &:hover {
-      background-color: #3498db;
       color: var(--white);
+      background-color: #3498db;
       transform: translateY(-2px);
     }
+
     &:focus {
       outline: none;
-      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+      box-shadow: 0 0 0 3px rgb(52 152 219 / 50%);
     }
 
     &:active {

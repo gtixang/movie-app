@@ -14,21 +14,22 @@
         <h2 class="movies__loading">Загрузка фильмов</h2>
       }
       @case ('loaded') {
-        <ul class="movies__grid" role="list">
-          @for (m of vm.movies; track m.id) {
-            <li>
-              <app-movie-card [movie]="m"></app-movie-card>
-            </li>
-          }
-        </ul>
+        @if (vm.movies.length === 0) {
+          <p class="movies__empty-message">Ничего не найдено.</p>
+        } @else {
+          <ul class="movies__grid">
+            @for (m of vm.movies; track m.id) {
+              <li>
+                <app-movie-card [movie]="m"></app-movie-card>
+              </li>
+            }
+          </ul>
+        }
       }
       @case ('error') {
         <p class="movies__error-message" role="alert">
           Произошла ошибка при загрузке данных.
         </p>
-      }
-      @default {
-        <p class="movies__empty-message">Ничего не найдено.</p>
       }
     }
   </ng-container>
