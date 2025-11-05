@@ -44,7 +44,6 @@ npm run start:all
 - **SCSS** (модульные стили)
 - **json-server** (mock API)
 - **concurrently** (параллельный запуск клиента и сервера)
-- **angular-cli-ghpages** (деплой на GitHub Pages)
 - **BEM** (методология именования классов в CSS)
 
 ---
