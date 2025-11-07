@@ -3,6 +3,7 @@
     class="movie-card__poster"
     [src]="movie.poster || 'assets/default-image.png'"
     [alt]="movie.title"
+    loading="lazy"
   />
   <div class="movie-card__footer">
     <p>
