@@ -24,7 +24,7 @@
     "order/properties-order": [
       {
         "groupName": "layout",
-        "emptyLineBefore": "always",
+        "emptyLineBefore": "never",
         "properties": [
           "width",
           "min-width",
@@ -61,7 +61,7 @@
       },
       {
         "groupName": "typography",
-        "emptyLineBefore": "always",
+        "emptyLineBefore": "never",
         "properties": [
           "font",
           "font-family",
@@ -76,24 +76,22 @@
       },
       {
         "groupName": "visual",
-        "emptyLineBefore": "always",
+        "emptyLineBefore": "never",
         "properties": [
           "background",
           "background-color",
           "background-image",
           "background-size",
           "background-repeat",
-
           "border",
           "border-radius",
-
           "box-shadow",
           "opacity"
         ]
       },
       {
         "groupName": "other",
-        "emptyLineBefore": "always",
+        "emptyLineBefore": "never",
         "properties": ["cursor", "transition", "transform"]
       }
     ]
