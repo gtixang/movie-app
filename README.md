@@ -1,6 +1,6 @@
 <h1 align="center">
   <img src="src/assets/movie.svg" alt="Movie App Logo" width="38px" height="38px" style="vertical-align: middle; align="center"" />
-  angular-movie-app — Тестовое задание на Angular
+  angular-movie-app
 </h1>
 
 В этом архиве находится полностью готовое приложение **angular-movie-app** (на **Angular 20**) с каталогом `src/`, полной конфигурацией и файлом `db.json` для запуска mock API через `json-server`.
