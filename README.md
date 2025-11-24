@@ -3,7 +3,7 @@
   angular-movie-app
 </h1>
 
-В этом архиве находится полностью готовое приложение **angular-movie-app** (на **Angular 20**) с каталогом `src/`, полной конфигурацией и файлом `db.json` для запуска mock API через `json-server`.
+В этом архиве находится приложение **angular-movie-app** (на **Angular 20**) с каталогом `src/`, полной конфигурацией и файлом `db.json` для запуска mock API через `json-server`.
 
 ---
 
